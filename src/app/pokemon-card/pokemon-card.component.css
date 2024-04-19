@@ -18,6 +18,7 @@
     border: 1px solid #ccc;
     box-shadow: 0px 0px 10px #423838;
     border-radius: 10px;
+    width: 250px;
 }
 
 .pokemon-card p{
@@ -29,7 +30,7 @@
     box-shadow: 0px 0px 10px #423838;
     padding : 0px 2rem;
     margin: 1rem;
-    background-color: #423838;
+    background-color: #322C2B;
     color : #fff;
 }
     

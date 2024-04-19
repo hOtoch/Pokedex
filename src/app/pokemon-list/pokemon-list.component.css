@@ -1,0 +1,19 @@
+.pokemon-list{
+    display: flex;
+    flex-wrap : wrap;
+    justify-content: space-evenly;
+}
+
+
+.pagination_control {
+    padding: 1rem;
+    border: 3px solid #322C2B;
+    border-radius: 10px;
+    background-color: #AF8260;
+    width: 20%;
+    color:aliceblue;
+    margin-left: 40%;
+    margin-right: 40%;
+  }
+  
+  

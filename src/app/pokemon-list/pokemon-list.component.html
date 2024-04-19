@@ -1,7 +1,13 @@
 <div class="pokemon-list">
     <app-pokemon-card 
-        *ngFor="let pokemon of pokemons; index as i" 
-        [pokemon]="pokemon"
-        [numberPokemon] = "i + 1">
+        *ngFor="let pokemon of pokemonService.pokemons | paginate: {itemsPerPage: itemsPerPage, currentPage : currentPage}; index as i" 
+        [pokemon]="capitalizeFirstLetter(pokemon['name'])"
+        [numberPokemon] = "getNumberPokemon(i)">
     </app-pokemon-card>
+    
 </div>
+
+<div class="pagination_control">
+    <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+</div>
+ 
