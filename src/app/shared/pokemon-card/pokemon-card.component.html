@@ -1,0 +1,10 @@
+<div [routerLink]="['details',pokemon.status.id]"class="pokemon-card" *ngIf="pokemon.status">
+    <img [src] = "getUrlImage()"/>
+    <p> Nº{{formatNumber}}</p>
+    <p>{{ pokemonName }} </p>
+    <ul class="pokemon-types">
+        <li *ngFor="let value of pokemon.status.types">
+            {{utilitiesService.capitalizeFirstLetter(value.type.name)}}
+        </li>
+    </ul>
+</div>

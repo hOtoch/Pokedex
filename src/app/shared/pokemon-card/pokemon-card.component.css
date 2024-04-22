@@ -19,6 +19,12 @@
     box-shadow: 0px 0px 10px #423838;
     border-radius: 10px;
     width: 250px;
+    cursor: pointer;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.15); 
+    box-shadow: 0px 0px 30px #423838; 
 }
 
 .pokemon-card p{
@@ -34,3 +40,23 @@
     color : #fff;
 }
     
+.pokemon-card .pokemon-types {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pokemon-card .pokemon-types li {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #423838;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+    margin: 0.5rem;
+    background-color: #322c2b;
+    color: #fff;
+}

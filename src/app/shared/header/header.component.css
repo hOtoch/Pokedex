@@ -1,0 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Yanone+Kaffeesatz:wght@200..700&display=swap');
+
+
+.header{
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0px 5px #322C2B;
+    background-color: #AF8260;
+    margin-bottom: 1rem;
+    height: 7rem;
+    padding: 2rem;
+}
+
