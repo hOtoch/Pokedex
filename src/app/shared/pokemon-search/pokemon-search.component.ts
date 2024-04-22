@@ -7,9 +7,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class PokemonSearchComponent{
   searchedPokemon: string = '';
-  @Output() public searchPokemon : EventEmitter<string> = new EventEmitter();
+  @Output() public emmitSearchPokemon : EventEmitter<string> = new EventEmitter();
 
   public search(value : string){
-    this.searchPokemon.emit(value);
+    this.emmitSearchPokemon.emit(value);
   }
 }

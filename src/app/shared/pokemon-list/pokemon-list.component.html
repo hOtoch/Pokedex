@@ -1,9 +1,9 @@
-<app-pokemon-search></app-pokemon-search>
+<app-pokemon-search (emmitSearchPokemon) = "searchPokemon($event)"></app-pokemon-search>
 <div class="pokemon-list">
     <app-pokemon-card 
         *ngFor="let pokemon of pokemons | paginate: {itemsPerPage: itemsPerPage, currentPage : currentPage}; index as i" 
         [pokemonName]="utilitiesService.capitalizeFirstLetter(pokemon['name'])"
-        [numberPokemon] = "getNumberPokemon(i)"
+        [numberPokemon] = "getNumberPokemon(pokemon['status'])"
         [pokemon] = "pokemon">
     </app-pokemon-card>
     

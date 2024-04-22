@@ -13,6 +13,7 @@ export class PokemonListComponent implements OnInit{
   itemsPerPage : number = 30;
 
   public pokemons: any;
+  private setPokemons : any;
 
   constructor(
     public pokemonService: PokemonService,
@@ -21,16 +22,24 @@ export class PokemonListComponent implements OnInit{
   ngOnInit() :void {
     this.pokemonService.apiListAllPokemons.subscribe(
       (res) => {
-        this.pokemons = res.results;
-        console.log(res);
+        this.setPokemons = res.results;
+        this.pokemons = this.setPokemons;
+        console.log(this.pokemons);
       }
     );
   }
 
-  
+  public searchPokemon(value : string){
+    const filter = this.setPokemons.filter((pokemon: any) => {
+      return !pokemon.name.indexOf(value.toLowerCase());
+    });
 
-  getNumberPokemon(index: number): number {
-    return (this.currentPage - 1) * this.itemsPerPage + index + 1;
+    this.pokemons = filter;
+  }
+
+  getNumberPokemon(status : any){
+    // return (this.currentPage - 1) * this.itemsPerPage + index + 1;
+    return status?.id;
   }
 
   onPageChange(pageNumber: number) {

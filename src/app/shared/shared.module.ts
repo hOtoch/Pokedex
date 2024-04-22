@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterModule } from '@angular/router';
 import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -30,7 +31,8 @@ import { PokemonSearchComponent } from './pokemon-search/pokemon-search.componen
     BrowserModule,
     HttpClientModule,
     NgxPaginationModule,
-    RouterModule
+    RouterModule,
+    MatDialogModule
   ]
 })
 export class SharedModule { }
