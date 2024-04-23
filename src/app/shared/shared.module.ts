@@ -10,6 +10,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { RouterModule } from '@angular/router';
 import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -18,12 +19,14 @@ import { MatDialogModule } from '@angular/material/dialog';
     HeaderComponent,
     PokemonListComponent,
     PokemonCardComponent,
-    PokemonSearchComponent
+    PokemonSearchComponent,
+    FooterComponent
   ],
   exports: [
     HeaderComponent,
     PokemonListComponent,
-    PokemonCardComponent
+    PokemonCardComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

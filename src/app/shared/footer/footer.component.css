@@ -1,0 +1,13 @@
+.footer__text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #AF8260;
+    border-top : 2px solid #322C2B;
+    color: #fff;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}

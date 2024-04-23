@@ -18,25 +18,17 @@
     font-style: normal;
     background-color: transparent; 
     color: #fff; 
-    outline: none; 
+    outline: none;
+    transition: border-color 0.3s ease; 
 }
 
-
-.input_search_pokemon button {
-    padding: 0.5rem 1rem;
-    margin-top: 0.5rem;
-    border: none; 
-    border-radius: 5px; 
-    font-family: "Roboto Mono", monospace;
-    font-weight: 600;
-    font-style: normal;
-    background-color: #fff; 
-    color: #AF8260; 
-    cursor: pointer; 
-    transition: background-color 0.3s, color 0.3s; 
+.input_search_pokemon input[type="text"]:hover{
+    border: 2px solid #935e3a;
+    background-color: #fff;
 }
 
-.input_search_pokemon button:hover {
-    background-color: #AF8260; 
-    color: #fff; 
+.input_search_pokemon input[type="text"]:focus{
+    border: 2px solid #935e3a;
+    background-color: #fff;
+    color:#935e3a
 }
