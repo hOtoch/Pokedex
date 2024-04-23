@@ -5,14 +5,15 @@ import { RoutingModule } from './routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { ModalDetailsComponent } from './modal-details/modal-details.component';
-
+import { ModalCompareComponent } from './modal-compare/modal-compare.component';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    ModalDetailsComponent
+    ModalDetailsComponent,
+    ModalCompareComponent
   ],
   imports: [
     CommonModule,

@@ -2,7 +2,10 @@
     display: flex;
     flex-wrap : wrap;
     justify-content: space-evenly;
-    z-index: -1;
+}
+
+.compare__pokemons{
+    margin-right: 1rem;
 }
 
 
@@ -16,4 +19,13 @@
     margin: 10px 40%;
   }
   
+.header__pokemon__list{
+    display : flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+
+
+
+
   

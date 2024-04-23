@@ -1,10 +1,17 @@
-<app-pokemon-search (emmitSearchPokemon) = "searchPokemon($event)"></app-pokemon-search>
+<div class="header__pokemon__list">
+    <app-pokemon-search (emmitSearchPokemon) = "searchPokemon($event)"></app-pokemon-search>
+    <div class="compare__pokemons">
+        <app-compare (emmitCompare)="onCheckboxChange($event)"></app-compare>
+    </div>
+</div>
 <div class="pokemon-list">
     <app-pokemon-card 
         *ngFor="let pokemon of pokemons | paginate: {itemsPerPage: itemsPerPage, currentPage : currentPage}; index as i" 
         [pokemonName]="utilitiesService.capitalizeFirstLetter(pokemon['name'])"
         [numberPokemon] = "getNumberPokemon(pokemon['status'])"
-        [pokemon] = "pokemon">
+        [pokemon] = "pokemon"
+        [isCompareChecked]="isCompareChecked"
+        (emmitPokemonChecked)="onEmmitPokemonChecked($event)">
     </app-pokemon-card>
     
 </div>

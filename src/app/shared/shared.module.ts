@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FooterComponent } from './footer/footer.component';
+import { CompareComponent } from './compare/compare.component';
 
 
 
@@ -20,13 +21,15 @@ import { FooterComponent } from './footer/footer.component';
     PokemonListComponent,
     PokemonCardComponent,
     PokemonSearchComponent,
-    FooterComponent
+    FooterComponent,
+    CompareComponent
   ],
   exports: [
     HeaderComponent,
     PokemonListComponent,
     PokemonCardComponent,
-    FooterComponent
+    FooterComponent,
+    CompareComponent
   ],
   imports: [
     CommonModule,

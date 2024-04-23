@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
 import { UtilitiesService } from '../../services/utilities.service';
-
+import { ModalCompareComponent } from 'src/app/pages/modal-compare/modal-compare.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -11,13 +12,16 @@ import { UtilitiesService } from '../../services/utilities.service';
 export class PokemonListComponent implements OnInit{
   currentPage : number = 1;
   itemsPerPage : number = 30;
+  isCompareChecked = false;
 
   public pokemons: any;
   private setPokemons : any;
+  public pokemonsChecked : any = [];
 
   constructor(
     public pokemonService: PokemonService,
-    public utilitiesService: UtilitiesService) {}
+    public utilitiesService: UtilitiesService,
+    public dialog : MatDialog ) {}
 
   ngOnInit() :void {
     this.pokemonService.apiListAllPokemons.subscribe(
@@ -27,6 +31,32 @@ export class PokemonListComponent implements OnInit{
         console.log(this.pokemons);
       }
     );
+  }
+
+  onCheckboxChange(checked: boolean) {
+    this.isCompareChecked = checked;
+  }
+
+  onEmmitPokemonChecked(pokemon: any) {
+    if(this.pokemonsChecked.length < 2){
+      this.pokemonsChecked.push(pokemon);
+    }
+    if(this.pokemonsChecked.length === 2){
+      console.log('Comparar');
+      console.log(this.pokemonsChecked);
+      this.openCompareModal();
+    }
+  }
+
+  openCompareModal() : void {
+    
+    const dialogRef = this.dialog.open(ModalCompareComponent, {
+      data: {pokemons : this.pokemonsChecked}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.pokemonsChecked = [];
+    });
   }
 
   public searchPokemon(value : string){

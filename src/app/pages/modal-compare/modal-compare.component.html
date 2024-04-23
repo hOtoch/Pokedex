@@ -1,0 +1,36 @@
+<header class="compare__header">
+    <h1>Compare Pokemons</h1>
+    <img src="assets/images/close.png" alt="Close" class="close_image" (click)="close()" height="30" width="30">
+</header>
+
+<section class="pokemon__list">
+    <div class="pokemon__list__item">
+        <app-pokemon-card 
+            [pokemonName]="utilitiesService.capitalizeFirstLetter(pokemons[0]['name'])"
+            [numberPokemon] = "pokemons[0].status?.id"
+            [pokemon] = "pokemons[0]"
+            [isComparing] = true>
+        </app-pokemon-card>
+
+        <p>TOTAL POWER : <strong>{{getTotalPower(pokemons[0])}}</strong></p>
+    </div>
+
+    <img src="assets/images/versus.png" alt="VS" class="vs_image" width = 250 height = 250>
+
+    <div class="pokemon__list__item">
+        <app-pokemon-card 
+            [pokemonName]="utilitiesService.capitalizeFirstLetter(pokemons[1]['name'])"
+            [numberPokemon] = "pokemons[1].status?.id"
+            [pokemon] = "pokemons[1]"
+            [isComparing] = true>
+        </app-pokemon-card>
+
+        <p>TOTAL POWER : <strong>{{getTotalPower(pokemons[1])}}</strong></p>
+    </div>
+    
+</section>
+
+<section class="compare__result">
+    {{getTheBetterPokemon()}}
+</section>
+

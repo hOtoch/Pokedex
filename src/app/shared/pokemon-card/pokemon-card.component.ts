@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { UtilitiesService } from '../../services/utilities.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalDetailsComponent } from '../../pages/modal-details/modal-details.component';
@@ -13,6 +13,9 @@ export class PokemonCardComponent {
   @Input() pokemonName: string;
   @Input() numberPokemon : number;
   @Input() pokemon : any;
+  @Input() isCompareChecked : boolean;
+  @Input() isComparing : boolean;
+  @Output() emmitPokemonChecked = new EventEmitter<any>();
   formatNumber: string = '';
   typesPokemon: string[] = [];
 
@@ -21,18 +24,28 @@ export class PokemonCardComponent {
     this.pokemonName = '';
     this.numberPokemon = 0;
     this.formatNumber = '';
+    this.isCompareChecked = false;
+    this.isComparing = false;
+  }
 
+  onClickCard() : void {
+    if(!this.isComparing){
+      if(this.isCompareChecked){
+        this.emmitPokemonChecked.emit(this.pokemon);
+      }else{
+        this.openDetailsModal();
+      }
+    }
   }
 
   openDetailsModal() : void {
-    console.log('Abrindo modal');
+    
     const dialogRef = this.dialog.open(ModalDetailsComponent, {
      
       data: {pokemon : this.pokemon}
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('O modal foi fechado');
     });
   }
 

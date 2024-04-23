@@ -1,8 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatDialogRef } from '@angular/material/dialog';
-import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
 import { UtilitiesService } from 'src/app/services/utilities.service';
 
 @Component({

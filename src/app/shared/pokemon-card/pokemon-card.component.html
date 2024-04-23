@@ -1,9 +1,10 @@
-<div (click)="openDetailsModal()"class="pokemon-card" *ngIf="pokemon.status">
+<div (click)="onClickCard()" [ngClass]="{'pokemon-card':!isCompareChecked, 'pokemon-card-check': isCompareChecked}" *ngIf="pokemon.status" tabindex="0">
+    
     <img [src] = "getUrlImage()"/>
-    <p> Nº{{formatNumber}}</p>
-    <p>{{ pokemonName }} </p>
+    <p class="pokemon-card-info"> Nº{{formatNumber}}</p>
+    <p class="pokemon-card-info">{{ pokemonName }} </p>
     <ul class="pokemon-types">
-        <li *ngFor="let value of pokemon.status.types">
+        <li class="pokemon-types-item"*ngFor="let value of pokemon.status.types">
             {{utilitiesService.capitalizeFirstLetter(value.type.name)}}
         </li>
     </ul>

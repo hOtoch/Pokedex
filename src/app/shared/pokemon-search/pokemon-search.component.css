@@ -5,12 +5,13 @@
     padding: 1rem;
     border-radius: 10px;
     gap:10px;
+    margin-right: 10vw;
 }
 
 
 .input_search_pokemon input[type="text"] {
     padding: 0.5rem;
-    width: 30rem; 
+    width: 40vw; 
     border: 2px solid #fff; 
     border-radius: 5px; 
     font-family: "Roboto Mono", monospace;
