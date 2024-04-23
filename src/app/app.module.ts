@@ -10,6 +10,10 @@ import { PokemonCardComponent } from './shared/pokemon-card/pokemon-card.compone
 
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonService } from './services/pokemon.service';
+
+
+import{ ModalDetailsComponent } from './pages/modal-details/modal-details.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { PagesModule } from './pages/pages.module';
 
 @NgModule({
@@ -24,7 +28,7 @@ import { PagesModule } from './pages/pages.module';
     PagesModule,
     AppRoutingModule
   ],
-  providers: [PokemonService],
+  providers: [PokemonService, provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

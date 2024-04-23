@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Platypi:ital,wght@0,300..800;1,300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Yanone+Kaffeesatz:wght@200..700&display=swap');
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .pokemon__status {
+    animation: fadeIn 0.5s ease-in-out; 
+  }
+  
+
+.pokemon__status__header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #AF8260;
+    border : 3px solid #935e3a;
+    padding-top: 1rem;
+}
+
+
+.pokemon__status__header h1{
+    font-family: "Platypi", serif;
+    font-weight: 800;
+    background-color: #E4C59E;
+    border: 1px solid #935e3a;
+    padding: 0.2rem;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px #423838;
+    padding: 0rem 5rem;
+}
+
+
+.pokemon__status__info{
+    display: flex;
+    padding: 1rem;
+    background-color: #E4C59E; 
+    justify-content: space-between;
+    gap: 3rem;
+    
+}
+
+.pokemon__status__info__statistics{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    border: 3px solid #935e3a;
+    border-radius: 10px;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+.pokemon__status__info__statistics__list{
+    display: flex;
+    border-top: 2px solid #935e3a;
+    padding-top: 2rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.pokemon__status__info__statistics li{
+    font-family: "Platypi", serif;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+.pokemon__status__info__statistics strong {
+    border: 1px solid #935e3a;
+    padding: 0.2rem;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.pokemon__status__info__statistics__total{
+    font-family: "Platypi", serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    border: 1px solid #935e3a;
+    padding: 0.2rem;
+    border-radius: 10px;
+    background-color: white;
+}
+
+
+.button__close {
+    background-color: #AF8260;
+    color: white;
+    border: none;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .button__close:hover {
+    background-color: #935e3a;
+  }

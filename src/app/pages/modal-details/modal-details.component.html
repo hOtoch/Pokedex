@@ -1,0 +1,34 @@
+<div class="pokemon__status">
+    <header class="pokemon__status__header">
+        <h1>{{ utilitiesService.capitalizeFirstLetter(data.pokemon.name) }}</h1>
+    </header>
+    
+    <section class="pokemon__status__info">
+      
+        <img [src]="getUrlModalImage()"
+        width="200"
+        height="200"
+        class="pokemon__status__info__image" >
+      
+        <section class="pokemon__status__info__statistics">
+            <h2>Statistics</h2>
+            <ol class="pokemon__status__info__statistics__list">
+                <li *ngFor="let value of data.pokemon.status.stats">
+                    {{ utilitiesService.capitalizeFirstLetter(value.stat.name) }}
+    
+                <strong>
+                    {{ value.base_stat }}
+                </strong>
+                </li>
+            </ol>
+            <p class="pokemon__status__info__statistics__total"> Total power: {{getTotalPower()}}</p>
+        </section>
+    
+    
+     
+    </section>
+</div>
+
+
+
+<button (click)="close()" class="button__close">Back</button>
