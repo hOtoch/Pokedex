@@ -2,11 +2,12 @@
     display: flex;
     flex-wrap : wrap;
     justify-content: space-evenly;
-    
+    width: 95vw;
+    height: 80vw;
 }
 
 .compare__pokemons{
-    margin-right: 1rem;
+    margin-right: 5vw;
 }
 
 

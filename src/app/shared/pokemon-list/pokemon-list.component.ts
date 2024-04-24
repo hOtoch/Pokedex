@@ -15,7 +15,6 @@ export class PokemonListComponent implements OnInit{
   isCompareChecked = false;
 
   @ViewChild('container') container: ElementRef | undefined;
-  @ViewChild('card') card: ElementRef | undefined;
 
   public pokemons: any;
   private setPokemons : any;
@@ -31,9 +30,25 @@ export class PokemonListComponent implements OnInit{
       (res) => {
         this.setPokemons = res.results;
         this.pokemons = this.setPokemons;
+
+        this.calculateItemsPerPage();
       }
     );
   }
+
+  calculateItemsPerPage() {
+    if (this.container) {
+      const containerWidth = this.container.nativeElement.offsetWidth;
+      const containerHeight = this.container.nativeElement.offsetHeight;
+
+      const itensPerRow = Math.floor(containerWidth / 270);
+      const itensPerColumn = Math.floor(containerHeight / 420);
+
+      this.itemsPerPage = itensPerRow * itensPerColumn;
+    }
+
+  }
+
 
 
   onCheckboxChange(checked: boolean) {

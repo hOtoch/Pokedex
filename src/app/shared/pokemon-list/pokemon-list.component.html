@@ -4,7 +4,7 @@
         <app-compare (emmitCompare)="onCheckboxChange($event)"></app-compare>
     </div>
 </div>
-<div class="pokemon-list" #container>
+<div class="pokemon-list" #container (window:resize)="calculateItemsPerPage()">
     <app-pokemon-card 
         *ngFor="let pokemon of pokemons | paginate: {itemsPerPage: itemsPerPage, currentPage : currentPage}; index as i"  #card
         [pokemonName]="utilitiesService.capitalizeFirstLetter(pokemon['name'])"
