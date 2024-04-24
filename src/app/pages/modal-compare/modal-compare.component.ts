@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatDialogRef } from '@angular/material/dialog';
 import { UtilitiesService } from 'src/app/services/utilities.service';	
+import { SharedEventsService } from 'src/app/services/shared-events.service';
 
 @Component({
   selector: 'app-modal-compare',
@@ -11,7 +12,8 @@ import { UtilitiesService } from 'src/app/services/utilities.service';
 export class ModalCompareComponent {
   constructor(public dialogRef : MatDialogRef<ModalCompareComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    public utilitiesService: UtilitiesService
+    public utilitiesService: UtilitiesService,
+    private sharedEventsService : SharedEventsService
   ) { }
 
   pokemons : any = this.data.pokemons;
@@ -36,5 +38,6 @@ export class ModalCompareComponent {
 
   close() :void {
     this.dialogRef.close();
+    this.sharedEventsService.emitEvent(true);
   }
 }

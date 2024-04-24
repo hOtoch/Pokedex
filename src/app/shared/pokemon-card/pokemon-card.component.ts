@@ -1,15 +1,15 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { UtilitiesService } from '../../services/utilities.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalDetailsComponent } from '../../pages/modal-details/modal-details.component';
-
+import { SharedEventsService } from 'src/app/services/shared-events.service';
 
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
   styleUrls: ['./pokemon-card.component.css']
 })
-export class PokemonCardComponent {
+export class PokemonCardComponent{
   @Input() pokemonName: string;
   @Input() numberPokemon : number;
   @Input() pokemon : any;
@@ -18,15 +18,18 @@ export class PokemonCardComponent {
   @Output() emmitPokemonChecked = new EventEmitter<any>();
   formatNumber: string = '';
   typesPokemon: string[] = [];
+  modalCompareClosed: boolean = false;
 
   constructor(public utilitiesService: UtilitiesService
-    , public dialog : MatDialog  ) {
+    , public dialog : MatDialog,
+    private sharedEventsService : SharedEventsService) { 
     this.pokemonName = '';
     this.numberPokemon = 0;
     this.formatNumber = '';
     this.isCompareChecked = false;
     this.isComparing = false;
   }
+
 
   onClickCard() : void {
     if(!this.isComparing){

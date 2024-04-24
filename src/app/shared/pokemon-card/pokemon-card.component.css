@@ -2,12 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 
-:root {
-    --background-card-color : #eee;
-    --fonte-primaria : 
-}
-
-
 .pokemon-card{
     display: flex;
     flex-direction: column;
@@ -49,7 +43,8 @@
 }
 
 .pokemon-card-check:focus{
-    border: 4px dashed #b41f0b;
+    border: 4px dashed #AF8260;
+    transform: scale(1.15);
 }
 
 .pokemon-card-info{

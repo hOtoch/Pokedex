@@ -83,11 +83,18 @@
     font-family: "Platypi", serif;
     font-weight: 800;
     font-size: 1.5rem;
+    padding: 0.2rem;
+    border-radius: 10px;
+}
+
+.pokemon__status__info__statistics__total span{
     border: 1px solid #935e3a;
     padding: 0.2rem;
     border-radius: 10px;
     background-color: white;
+    color: #b41f0b;
 }
+
 
 
 .button__close {

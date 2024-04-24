@@ -7,6 +7,7 @@ import { PokemonCardComponent } from './pokemon-card/pokemon-card.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { RouterModule } from '@angular/router';
 import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -38,7 +39,8 @@ import { CompareComponent } from './compare/compare.component';
     HttpClientModule,
     NgxPaginationModule,
     RouterModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ]
 })
 export class SharedModule { }

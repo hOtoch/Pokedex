@@ -1,4 +1,4 @@
-<div (click)="onClickCard()" [ngClass]="{'pokemon-card':!isCompareChecked, 'pokemon-card-check': isCompareChecked}" *ngIf="pokemon.status" tabindex="0">
+<div #card (click)="onClickCard()" [ngClass]="{'pokemon-card':!isCompareChecked, 'pokemon-card-check': isCompareChecked}" *ngIf="pokemon.status" id ="card" tabindex="0">
     
     <img [src] = "getUrlImage()"/>
     <p class="pokemon-card-info"> Nº{{formatNumber}}</p>
@@ -9,3 +9,4 @@
         </li>
     </ul>
 </div>
+

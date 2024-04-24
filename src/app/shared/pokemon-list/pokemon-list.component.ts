@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { PokemonService } from '../../services/pokemon.service';
 import { UtilitiesService } from '../../services/utilities.service';
 import { ModalCompareComponent } from 'src/app/pages/modal-compare/modal-compare.component';
@@ -14,6 +14,9 @@ export class PokemonListComponent implements OnInit{
   itemsPerPage : number = 30;
   isCompareChecked = false;
 
+  @ViewChild('container') container: ElementRef | undefined;
+  @ViewChild('card') card: ElementRef | undefined;
+
   public pokemons: any;
   private setPokemons : any;
   public pokemonsChecked : any = [];
@@ -28,13 +31,17 @@ export class PokemonListComponent implements OnInit{
       (res) => {
         this.setPokemons = res.results;
         this.pokemons = this.setPokemons;
-        console.log(this.pokemons);
       }
     );
   }
 
+
   onCheckboxChange(checked: boolean) {
     this.isCompareChecked = checked;
+
+    if(!checked){
+      this.pokemonsChecked = [];
+    }
   }
 
   onEmmitPokemonChecked(pokemon: any) {
@@ -42,8 +49,6 @@ export class PokemonListComponent implements OnInit{
       this.pokemonsChecked.push(pokemon);
     }
     if(this.pokemonsChecked.length === 2){
-      console.log('Comparar');
-      console.log(this.pokemonsChecked);
       this.openCompareModal();
     }
   }
@@ -67,8 +72,8 @@ export class PokemonListComponent implements OnInit{
     this.pokemons = filter;
   }
 
+
   getNumberPokemon(status : any){
-    // return (this.currentPage - 1) * this.itemsPerPage + index + 1;
     return status?.id;
   }
 
